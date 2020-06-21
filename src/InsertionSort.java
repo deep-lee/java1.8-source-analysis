@@ -9,7 +9,7 @@ public class InsertionSort {
     for (int i = left + 1; i < right; i++) {
       int temp = a[i];
       int j = i - 1;
-      while (j >= 0 && temp < a[j]) {
+      while (j >= left && temp < a[j]) {
         a[j + 1] = a[j];
         j--;
       }
