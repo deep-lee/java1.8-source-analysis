@@ -53,9 +53,9 @@ package java.util;
  *  pp 467-474, Austin, Texas, 25-27 January 1993.
  *
  * While the API to this class consists solely of static methods, it is
- * (privately) instantiable; a TimSort instance holds the state of an ongoing
+ * (privately) instantiable; a sort.TimSort instance holds the state of an ongoing
  * sort, assuming the input array is large enough to warrant the full-blown
- * TimSort. Small arrays are sorted in place, using a binary insertion sort.
+ * sort.TimSort. Small arrays are sorted in place, using a binary insertion sort.
  *
  * @author Josh Bloch
  */
@@ -72,7 +72,7 @@ class TimSort<T> {
      * {@link #minRunLength} computation.
      *
      * If you decrease this constant, you must change the stackLen
-     * computation in the TimSort constructor, or you risk an
+     * computation in the sort.TimSort constructor, or you risk an
      * ArrayOutOfBounds exception.  See listsort.txt for a discussion
      * of the minimum stack length required as a function of the length
      * of the array being sorted and the minimum merge sequence length.
@@ -135,7 +135,7 @@ class TimSort<T> {
     private final int[] runLen;
 
     /**
-     * Creates a TimSort instance to maintain the state of an ongoing sort.
+     * Creates a sort.TimSort instance to maintain the state of an ongoing sort.
      *
      * @param a the array to be sorted
      * @param c the comparator to determine the order of the sort
@@ -215,7 +215,7 @@ class TimSort<T> {
         if (nRemaining < 2)
             return;  // Arrays of size 0 and 1 are always sorted
 
-        // If array is small, do a "mini-TimSort" with no merges
+        // If array is small, do a "mini-sort.TimSort" with no merges
         if (nRemaining < MIN_MERGE) {
             int initRunLen = countRunAndMakeAscending(a, lo, hi, c);
             binarySort(a, lo, hi, lo + initRunLen, c);

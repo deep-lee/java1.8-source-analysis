@@ -32,7 +32,7 @@ package java.util;
  * explicit comparators.
  *
  * <p>If you are using an optimizing VM, you may find that ComparableTimSort
- * offers no performance benefit over TimSort in conjunction with a
+ * offers no performance benefit over sort.TimSort in conjunction with a
  * comparator that simply returns {@code ((Comparable)first).compareTo(Second)}.
  * If this is the case, you are better off deleting ComparableTimSort to
  * eliminate the code duplication.  (See Arrays.java for details.)
@@ -52,7 +52,7 @@ class ComparableTimSort {
      * {@link #minRunLength} computation.
      *
      * If you decrease this constant, you must change the stackLen
-     * computation in the TimSort constructor, or you risk an
+     * computation in the sort.TimSort constructor, or you risk an
      * ArrayOutOfBounds exception.  See listsort.txt for a discussion
      * of the minimum stack length required as a function of the length
      * of the array being sorted and the minimum merge sequence length.
@@ -110,7 +110,7 @@ class ComparableTimSort {
     private final int[] runLen;
 
     /**
-     * Creates a TimSort instance to maintain the state of an ongoing sort.
+     * Creates a sort.TimSort instance to maintain the state of an ongoing sort.
      *
      * @param a the array to be sorted
      * @param work a workspace array (slice)
@@ -183,7 +183,7 @@ class ComparableTimSort {
         if (nRemaining < 2)
             return;  // Arrays of size 0 and 1 are always sorted
 
-        // If array is small, do a "mini-TimSort" with no merges
+        // If array is small, do a "mini-sort.TimSort" with no merges
         if (nRemaining < MIN_MERGE) {
             int initRunLen = countRunAndMakeAscending(a, lo, hi);
             binarySort(a, lo, hi, lo + initRunLen);

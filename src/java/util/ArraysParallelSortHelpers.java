@@ -52,7 +52,7 @@ import java.util.concurrent.CountedCompleter;
  *
  * Merger classes perform merging for Sorter.  They are structured
  * such that if the underlying sort is stable (as is true for
- * TimSort), then so is the full sort.  If big enough, they split the
+ * sort.TimSort), then so is the full sort.  If big enough, they split the
  * largest of the two partitions in half, find the greatest point in
  * smaller partition less than the beginning of the second half of
  * larger via binary search; and then merge in parallel the two
@@ -66,7 +66,7 @@ import java.util.concurrent.CountedCompleter;
  * The primitive class versions (FJByte... FJDouble) are
  * identical to each other except for type declarations.
  *
- * The base sequential sorts rely on non-public versions of TimSort,
+ * The base sequential sorts rely on non-public versions of sort.TimSort,
  * ComparableTimSort, and DualPivotQuicksort sort methods that accept
  * temp workspace array slices that we will have already allocated, so
  * avoids redundant allocation. (Except for DualPivotQuicksort byte[]

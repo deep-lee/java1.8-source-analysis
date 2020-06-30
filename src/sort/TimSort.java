@@ -1,3 +1,5 @@
+package sort;
+
 import java.util.Arrays;
 
 public class TimSort {
@@ -55,7 +57,7 @@ public class TimSort {
   }
 
   public static void timSort(int[] a, int n) {
-    // First, we use InsertionSort to sort individual subarrays
+    // First, we use sort.InsertionSort to sort individual subarrays
     for (int i = 0; i < n; i += RUN) {
       InsertionSort.insertionSort(a, i, Math.min(i + RUN, n));
     }

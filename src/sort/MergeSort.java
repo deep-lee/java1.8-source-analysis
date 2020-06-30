@@ -1,3 +1,5 @@
+package sort;
+
 // https://www.baeldung.com/java-merge-sort
 // 先分直到每个分组只有一个元素，再合并
 public class MergeSort {
